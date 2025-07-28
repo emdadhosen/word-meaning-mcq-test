@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word Meaning Test</title>
+
+  <!-- Google Fonts: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container" id="mainContainer">
+    <h2>ইংরেজি-বাংলা শব্দ ইনপুট</h2>
+    <div class="input-pair">
+      <input type="text" id="englishInput" placeholder="English" autocomplete="off" />
+      <input type="text" id="banglaInput" placeholder="বাংলা" autocomplete="off" />
+    </div>
+    <ul id="wordList"></ul>
+
+    <div class="save-section">
+      <input type="text" id="setNameInput" placeholder="সেটের নাম দিন" autocomplete="off" />
+      <button id="saveSetBtn">সেভ সেট</button>
+    </div>
+
+    <h3>Saved Sets</h3>
+    <div id="savedSets"></div>
+
+    <div id="resultBox" style="font-weight:700; margin-top: 20px;"></div>
+  </div>
+
+  <!-- Modal for editing words -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Edit Words</h3>
+        <span class="close-btn" id="modalCloseBtn">&times;</span>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+      <button id="modalSaveBtn" class="save-changes">Save Changes</button>
+    </div>
+  </div>
+
+  <!-- Modal for starting test -->
+  <div id="startTestModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="startTestModalTitle">পরীক্ষা শুরু করুন</h3>
+        <span class="close-btn" id="cancelStartTestBtn">&times;</span>
+      </div>
+      <div style="text-align:center; margin-top: 10px;">
+        <button id="startTestBtn" class="start-test-btn">Start Test</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Test Section -->
+  <div class="container" id="testContainer" style="display: none;">
+    <h2>MCQ পরীক্ষা</h2>
+    <div id="questionBox" class="question-box" style="min-height: 60px; font-weight: 700; font-size: 20px; margin-bottom: 15px;"></div>
+    <ul id="optionsList" class="options-list" style="list-style:none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; max-height: none; overflow: visible;"></ul>
+    <div id="resultBox" style="font-weight: 700; margin-top: 20px;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
